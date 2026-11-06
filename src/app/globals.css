@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* 노포맵 색 토큰: 따뜻한 한지 바탕 + 업력 단계 갈색 4단계 */
+:root {
+  --background: #faf7f2;
+  --surface: #ffffff;
+  --foreground: #2b231d;
+  --muted: #7a6d62;
+  --line: #e6ded3;
+  --accent: #8a4b22;
+  --tier-30: #c49a6c;
+  --tier-50: #a26a3c;
+  --tier-70: #7a4321;
+  --tier-100: #4a2412;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1714;
+    --surface: #24201c;
+    --foreground: #efe8df;
+    --muted: #a99c90;
+    --line: #3a332d;
+    --accent: #d9965f;
+    --tier-30: #d8b48a;
+    --tier-50: #c98d5a;
+    --tier-70: #b06a3a;
+    --tier-100: #e0b07a;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-tier-30: var(--tier-30);
+  --color-tier-50: var(--tier-50);
+  --color-tier-70: var(--tier-70);
+  --color-tier-100: var(--tier-100);
+  --font-sans: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
