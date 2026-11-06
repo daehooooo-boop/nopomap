@@ -97,8 +97,27 @@ const pickCategory = (d) =>
   d.category_group_code === "FD6" ? "음식점" : d.category_group_code === "CE7" ? "카페" : d.category_name?.split(" > ")[0] ?? null;
 
 /** 주소 → 좌표·행정구역, 그 근처에서 상호명으로 장소(카테고리·카카오맵 링크)를 찾음 */
-async function geocode(name, address) {
+async function geocode(name, address, { areaOnly = false } = {}) {
   const out = { status: "not_found", candidates: [] };
+  // areaOnly: 주소 대신 "시도 시군구"만 아는 가게(기존 큐레이션)는 상호명 검색만 함
+  if (areaOnly) {
+    const area = address.split(" ").pop();
+    const kw = await kakao("/v2/local/search/keyword.json", { query: `${area} ${name}`, size: 10 });
+    const core = compact(name);
+    const place = kw.documents?.find((d) => {
+      const p = compact(d.place_name);
+      return (d.road_address_name || d.address_name).includes(area) && (p.includes(core) || core.includes(p));
+    });
+    out.candidates = (kw.documents ?? []).map((d) => `${d.place_name} | ${d.road_address_name || d.address_name}`);
+    if (!place) return out;
+    const a = (place.road_address_name || place.address_name).split(" ");
+    return {
+      status: "ok", lat: Number(place.y), lng: Number(place.x), sido: normSido(a[0]), sigungu: a[1],
+      address: place.road_address_name || place.address_name, kakaoPlaceUrl: place.place_url,
+      kakaoCategory: pickCategory(place), kakaoCategoryDetail: place.category_name, matched: place.place_name,
+      candidates: out.candidates,
+    };
+  }
   // 1) 주소 검색 (건물명·층수 등 뒷부분은 떼고 재시도)
   const tries = [address, address.replace(/\s*\(.*$/, ""), address.split(" ").slice(0, 4).join(" ")];
   let addr = null;
@@ -175,11 +194,11 @@ const baeknyeon = rows.map((r) => {
 });
 
 let calls = 0;
-async function resolve(id, name, address) {
+async function resolve(id, name, address, opts) {
   if (cache[id] && cache[id].status !== "error") return cache[id];
   if (OFFLINE) return null;
   try {
-    cache[id] = await geocode(name, address);
+    cache[id] = await geocode(name, address, opts);
   } catch (e) {
     cache[id] = { status: "error", error: String(e.message ?? e) };
   }
@@ -197,7 +216,7 @@ const report = [];
 // 1) 기존 큐레이션(서울미래유산·오래가게) — 근사 좌표면 지오코딩으로 보정
 for (const s of seed) {
   let g = null;
-  if (s.coordPrecision !== "exact") g = await resolve(s.id, s.name, `${s.sido} ${s.sigungu}`);
+  if (s.coordPrecision !== "exact") g = await resolve(`${s.id}:kw`, s.name, `${s.sido} ${s.sigungu}`, { areaOnly: true });
   if (g && g.status === "ok") {
     Object.assign(s, { lat: g.lat, lng: g.lng, address: g.address, kakaoPlaceUrl: g.kakaoPlaceUrl, coordPrecision: "exact" });
   } else if (g) report.push({ id: s.id, name: s.name, status: g.status, candidates: g.candidates });
