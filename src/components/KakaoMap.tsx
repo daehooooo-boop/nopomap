@@ -10,7 +10,8 @@ declare global {
   }
 }
 
-const KEY = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY;
+// 환경 변수에 붙여 넣을 때 섞인 앞뒤 공백 제거
+const KEY = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY?.trim();
 const KOREA_CENTER = { lat: 36.35, lng: 127.8 };
 
 let sdkPromise: Promise<any> | null = null;
@@ -19,7 +20,7 @@ function loadKakao(): Promise<any> {
   sdkPromise = new Promise((resolve, reject) => {
     if (window.kakao?.maps) return window.kakao.maps.load(() => resolve(window.kakao));
     const s = document.createElement("script");
-    s.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KEY}&autoload=false&libraries=clusterer`;
+    s.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${encodeURIComponent(KEY ?? "")}&autoload=false&libraries=clusterer`;
     s.async = true;
     s.onload = () => window.kakao.maps.load(() => resolve(window.kakao));
     s.onerror = () => {
