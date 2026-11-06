@@ -11,8 +11,14 @@ export type Store = {
   address: string | null;
   lat: number;
   lng: number;
-  coordPrecision: "exact" | "approx-district";
+  /** exact: 카카오 장소 매칭, address: 주소 좌표만, approx-district: 자치구 중심 근사값 */
+  coordPrecision: "exact" | "address" | "approx-district";
   category: string;
+  categoryDetail?: string | null;
+  /** 2022 백년가게 현황의 주요사업 (예: "냉면", "제과,제빵") */
+  mainBusiness?: string | null;
+  /** 2022 백년가게 현황 기준 연락처. 바뀌었을 수 있음 */
+  phone?: string | null;
   signatureMenu: string[];
   story: string | null;
   naverPlaceUrl: string | null;

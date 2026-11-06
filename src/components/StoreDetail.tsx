@@ -50,7 +50,7 @@ export default function StoreDetail() {
 
             <section className="flex flex-col gap-1">
               <h3 className="text-xs text-muted">대표메뉴</h3>
-              <p className="font-medium">{store.signatureMenu.join(", ") || "확인 중"}</p>
+              <p className="font-medium">{store.signatureMenu.join(", ") || store.mainBusiness || "확인 중"}</p>
             </section>
 
             <section className="flex flex-col gap-1">
@@ -62,6 +62,16 @@ export default function StoreDetail() {
               <h3 className="text-xs text-muted">주소</h3>
               <p>{store.address ?? `${store.sido} ${store.sigungu} (정확한 주소 확인 중)`}</p>
             </section>
+
+            {store.phone && (
+              <section className="flex flex-col gap-1 text-sm">
+                <h3 className="text-xs text-muted">연락처</h3>
+                <p>
+                  <span className="select-all tabular-nums">{store.phone}</span>
+                  <span className="ml-2 text-xs text-muted">2022년 기준</span>
+                </p>
+              </section>
+            )}
 
             <div className="grid grid-cols-2 gap-2">
               <a href={mapUrl} target="_blank" rel="noreferrer" className="flex h-11 items-center justify-center rounded-xl bg-foreground text-sm font-semibold text-background">

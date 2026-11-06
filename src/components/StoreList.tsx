@@ -64,7 +64,7 @@ export default function StoreList({ stores }: { stores: Store[] }) {
                 <span className="min-w-0 flex-1">
                   <span className="block truncate font-semibold">{s.name}</span>
                   <span className="block truncate text-sm text-muted">
-                    {s.signatureMenu.join(", ")} · {s.sigungu}
+                    {s.signatureMenu.join(", ") || s.mainBusiness || s.category} · {s.sigungu}
                     {s.openYear && ` · ${s.openYear}년 개업`}
                   </span>
                 </span>
