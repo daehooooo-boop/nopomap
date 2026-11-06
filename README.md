@@ -10,7 +10,7 @@ npm install
 npm run dev                  # http://localhost:3000
 ```
 
-카카오 개발자 콘솔 → 앱 → 플랫폼 → Web에 `http://localhost:3000`과 배포 주소가 등록돼 있어야 지도가 뜹니다. 키가 없어도 목록 보기는 동작합니다.
+카카오 개발자 콘솔 → 앱 → 플랫폼 키 → JavaScript 키 → JavaScript SDK 도메인에 `http://localhost:3000`과 배포 주소가 등록돼 있어야 지도가 뜹니다. 키가 없어도 목록 보기는 동작합니다.
 
 ## 구조
 

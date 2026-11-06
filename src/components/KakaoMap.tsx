@@ -162,7 +162,7 @@ export default function KakaoMap({ stores, selectedId, onSelect, fitKey, visible
           )}
           {state === "error" && (
             <p>
-              지도를 불러오지 못했어요. 카카오 개발자 콘솔의 플랫폼 → Web에
+              지도를 불러오지 못했어요. 카카오 개발자 콘솔의 플랫폼 키 → JavaScript SDK 도메인에
               <br />이 주소({typeof window !== "undefined" ? window.location.origin : ""})가 등록돼 있는지 확인해 주세요.
             </p>
           )}
