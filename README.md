@@ -25,3 +25,18 @@ npm run dev                  # http://localhost:3000
 | `src/components/StoreDetail.tsx` | 가게 상세 하단 시트 (shadcn Drawer 구조, vaul) |
 
 기획서: 프로젝트 파일 `nopomap/노포맵_기획서.md`
+
+## 데이터 빌드 (공공데이터 + 큐레이션)
+
+```bash
+KAKAO_REST_KEY=REST키 node scripts/build-stores.mjs   # 지오코딩 + src/data/stores.json 생성
+node scripts/build-stores.mjs --offline              # 캐시만으로 다시 빌드
+```
+
+| 파일 | 내용 |
+|---|---|
+| `data/raw/baeknyeon_2026-08-20.csv` | 전국 백년가게 지정리스트 1,511곳 (주소만 있음) |
+| `data/raw/baeknyeon_2022-07-13.csv` | 2022 현황. 주요사업·연락처 보완용 (업체명+시군구로 매칭) |
+| `data/seed-stores.json` | 서울미래유산·오래가게 41곳 (개업연도 있음) |
+| `data/geocode-cache.json` | 카카오 지오코딩 결과 캐시 |
+| `data/geocode-report.json` | 좌표·장소를 못 찾아 확인이 필요한 가게 |
