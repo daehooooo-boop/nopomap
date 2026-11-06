@@ -8,10 +8,15 @@
   --muted: #7a6d62;
   --line: #e6ded3;
   --accent: #8a4b22;
-  --tier-30: #c49a6c;
-  --tier-50: #a26a3c;
-  --tier-70: #7a4321;
-  --tier-100: #4a2412;
+  --tier-30: #e5392b;
+  --tier-50: #f2b705;
+  --tier-70: #2f9e5b;
+  --tier-100: #6d3fd1;
+  /* 글자용: 밝은 배경에서 읽히도록 조금 진하게 */
+  --tier-30-ink: #c62f22;
+  --tier-50-ink: #9a7300;
+  --tier-70-ink: #23824a;
+  --tier-100-ink: #5a32b3;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,10 +27,14 @@
     --muted: #a99c90;
     --line: #3a332d;
     --accent: #d9965f;
-    --tier-30: #d8b48a;
-    --tier-50: #c98d5a;
-    --tier-70: #b06a3a;
-    --tier-100: #e0b07a;
+    --tier-30: #ef5a4c;
+    --tier-50: #f5c53a;
+    --tier-70: #4cbc78;
+    --tier-100: #8d68e6;
+    --tier-30-ink: #ef5a4c;
+    --tier-50-ink: #f5c53a;
+    --tier-70-ink: #4cbc78;
+    --tier-100-ink: #8d68e6;
   }
 }
 

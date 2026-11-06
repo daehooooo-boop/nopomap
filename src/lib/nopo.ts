@@ -64,10 +64,10 @@ export const TIER_COLOR_VAR: Record<Tier, string> = {
 
 /** 지도 핀은 CSS 변수를 못 쓰므로 고정 색 (라이트 기준) */
 export const TIER_PIN_HEX: Record<Tier, string> = {
-  30: "#c49a6c",
-  50: "#a26a3c",
-  70: "#7a4321",
-  100: "#4a2412",
+  30: "#e5392b", // 레드
+  50: "#f2b705", // 옐로
+  70: "#2f9e5b", // 그린
+  100: "#6d3fd1", // 퍼플
 };
 
 export function regionsOf(stores: Store[]): Record<string, string[]> {

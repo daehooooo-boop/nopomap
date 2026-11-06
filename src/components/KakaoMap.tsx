@@ -124,7 +124,7 @@ export default function KakaoMap({ stores, selectedId, onSelect, fitKey, visible
             {
               width: "40px",
               height: "40px",
-              background: "rgba(122, 67, 33, 0.85)",
+              background: "rgba(229, 57, 43, 0.88)",
               borderRadius: "20px",
               color: "#fff",
               textAlign: "center",
@@ -195,7 +195,7 @@ export default function KakaoMap({ stores, selectedId, onSelect, fitKey, visible
           onClick={goToMyLocation}
           aria-label="내 위치로 이동"
           title="내 위치로 이동"
-          className="absolute right-3 bottom-[calc(80px+env(safe-area-inset-bottom))] z-10 grid h-11 w-11 place-items-center rounded-full border border-line bg-surface text-foreground shadow-md md:bottom-6"
+          className="absolute right-4 bottom-[calc(20px+env(safe-area-inset-bottom))] z-10 grid h-11 w-11 place-items-center rounded-full border border-line bg-surface text-foreground shadow-lg"
         >
           <svg
             width="20"

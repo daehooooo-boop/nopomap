@@ -56,7 +56,7 @@ export default function StoreList({ stores }: { stores: Store[] }) {
                 className="flex w-full items-center gap-4 px-4 py-3.5 text-left hover:bg-background focus-visible:bg-background focus-visible:outline-none"
               >
                 <span className="flex w-14 shrink-0 flex-col items-center">
-                  <span className="text-2xl font-bold leading-none tabular-nums" style={{ color: `var(--tier-${t})` }}>
+                  <span className="text-2xl font-bold leading-none tabular-nums" style={{ color: `var(--tier-${t}-ink)` }}>
                     {y ?? "30+"}
                   </span>
                   <span className="mt-1 text-[11px] text-muted">{y ? "년째" : "년 이상"}</span>
