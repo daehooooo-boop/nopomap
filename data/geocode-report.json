@@ -1,5 +1,73 @@
 [
   {
+    "id": "nopo-004",
+    "name": "연남서식당",
+    "status": "not_found",
+    "candidates": []
+  },
+  {
+    "id": "nopo-008",
+    "name": "왕십리 대도식당",
+    "status": "not_found",
+    "candidates": [
+      "대도식당 왕십리본점 | 서울 성동구 무학로12길 3",
+      "대도숯불구이 | 서울 성동구 용답29길 18",
+      "대도가 성수직영점 | 서울 성동구 성수일로 80-17",
+      "남대문대도집 | 서울 동대문구 전농로11길 17-4",
+      "대도식품 | 서울 중구 을지로 지하 178",
+      "에프터드링크버거 | 서울 성동구 왕십리로 294-2"
+    ]
+  },
+  {
+    "id": "nopo-018",
+    "name": "황해",
+    "status": "not_found",
+    "candidates": [
+      "에키보 | 서울 용산구 한강대로15길 19-28"
+    ]
+  },
+  {
+    "id": "nopo-020",
+    "name": "통술집",
+    "status": "not_found",
+    "candidates": [
+      "생고기통술집 | 서울 용산구 청파로85길 38"
+    ]
+  },
+  {
+    "id": "nopo-023",
+    "name": "영동 스낵카",
+    "status": "not_found",
+    "candidates": []
+  },
+  {
+    "id": "nopo-031",
+    "name": "청일집",
+    "status": "not_found",
+    "candidates": []
+  },
+  {
+    "id": "nopo-033",
+    "name": "순흥옥",
+    "status": "not_found",
+    "candidates": []
+  },
+  {
+    "id": "nopo-038",
+    "name": "쌍다리식당",
+    "status": "not_found",
+    "candidates": [
+      "쌍다리돼지불백 본점 | 서울 성북구 성북로23길 4",
+      "쌍다리돼지불백 원남점 | 서울 종로구 동순라길 78-9"
+    ]
+  },
+  {
+    "id": "nopo-040",
+    "name": "등촌동 취월선칼국수",
+    "status": "not_found",
+    "candidates": []
+  },
+  {
     "id": "bn-b0ca544c",
     "name": "을지",
     "address": "서울 충구 충무로 49-2(을지로3가) 동주빌딩 1층",
@@ -2195,12 +2263,6 @@
     "candidates": [
       "동천해물칼국수 | 충북 증평군 증평읍 초중2길 3"
     ]
-  },
-  {
-    "id": "bn-ac8ad742",
-    "name": "갈매기 대도",
-    "address": "경남 김해시 김해대로2371번길 12-12 (부원동)",
-    "status": "not_geocoded"
   },
   {
     "id": "bn-210a0bd4",

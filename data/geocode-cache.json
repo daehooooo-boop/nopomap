@@ -18001,8 +18001,20 @@
   ]
  },
  "bn-ac8ad742": {
-  "status": "error",
-  "error": "fetch failed"
+  "status": "ok",
+  "lat": 35.227855335357,
+  "lng": 128.886582947968,
+  "sido": "경상남도",
+  "sigungu": "김해시",
+  "address": "경남 김해시 김해대로2371번길 12-12",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/1384864750",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 육류,고기",
+  "matched": "갈매기대도",
+  "candidates": [
+   "갈매기대도 | 경남 김해시 김해대로2371번길 12-12",
+   "세루스컴퍼니 | 경남 김해시 호계로438번길 31-1"
+  ]
  },
  "bn-210a0bd4": {
   "status": "address_only",
@@ -22491,6 +22503,581 @@
   "matched": "한국모터공구대여 윌로펌프서비스",
   "candidates": [
    "한국모터공구대여 윌로펌프서비스 | 충북 보은군 보은읍 교사삼산길 43"
+  ]
+ },
+ "nopo-001:kw": {
+  "status": "ok",
+  "lat": 37.53988170968319,
+  "lng": 126.94333796293756,
+  "sido": "서울특별시",
+  "sigungu": "마포구",
+  "address": "서울 마포구 토정로 312",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/10344284",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 설렁탕",
+  "matched": "마포옥",
+  "candidates": [
+   "마포옥 | 서울 마포구 토정로 312"
+  ]
+ },
+ "nopo-002:kw": {
+  "status": "ok",
+  "lat": 37.564910222013,
+  "lng": 126.99036546529,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 마른내로 21-1",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/12106466",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 냉면",
+  "matched": "평래옥",
+  "candidates": [
+   "평래옥 | 서울 중구 마른내로 21-1"
+  ]
+ },
+ "nopo-003:kw": {
+  "status": "ok",
+  "lat": 37.56807850687044,
+  "lng": 126.99846058244935,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 창경궁로 62-5",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/7873473",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 설렁탕",
+  "matched": "문화옥",
+  "candidates": [
+   "문화옥 | 서울 중구 창경궁로 62-5",
+   "문화옥 | 서울 서대문구 세검정로1길 100-5"
+  ]
+ },
+ "nopo-004:kw": {
+  "status": "not_found",
+  "candidates": []
+ },
+ "nopo-005:kw": {
+  "status": "ok",
+  "lat": 37.56435740219144,
+  "lng": 127.00054103307872,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 마른내로 114",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/8174854",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 냉면",
+  "matched": "오장동흥남집 본점",
+  "candidates": [
+   "오장동흥남집 본점 | 서울 중구 마른내로 114",
+   "오장동흥남집 서울역점 | 서울 중구 한강대로 405"
+  ]
+ },
+ "nopo-006:kw": {
+  "status": "ok",
+  "lat": 37.571703768021045,
+  "lng": 126.98278259136188,
+  "sido": "서울특별시",
+  "sigungu": "종로구",
+  "address": "서울 종로구 종로7길 47",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/13092177",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 술집 > 호프,요리주점",
+  "matched": "열차집",
+  "candidates": [
+   "열차집 | 서울 종로구 종로7길 47"
+  ]
+ },
+ "nopo-007:kw": {
+  "status": "ok",
+  "lat": 37.570844667978704,
+  "lng": 126.9799234417087,
+  "sido": "서울특별시",
+  "sigungu": "종로구",
+  "address": "서울 종로구 종로 19",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/21326655",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식",
+  "matched": "광화문미진 본점",
+  "candidates": [
+   "광화문미진 본점 | 서울 종로구 종로 19",
+   "광화문미진숯불막창 | 서울 종로구 종로5길 29",
+   "미진나염 | 서울 종로구 종로36나길 6-1",
+   "미진별 | 서울 종로구 돈화문로6가길 16",
+   "미진일식 | 서울 중구 다동길 16",
+   "미진체형관리 | 서울 중구 다동길 24-8",
+   "미진상사 | 서울 중구 을지로 139",
+   "미진출력 | 서울 중구 을지로 189-12",
+   "미진에스엔피 | 서울 중구 을지로16길 5-29",
+   "미진빌라 | 서울 서대문구 연희로41라길 7"
+  ]
+ },
+ "nopo-008:kw": {
+  "status": "not_found",
+  "candidates": [
+   "대도식당 왕십리본점 | 서울 성동구 무학로12길 3",
+   "대도숯불구이 | 서울 성동구 용답29길 18",
+   "대도가 성수직영점 | 서울 성동구 성수일로 80-17",
+   "남대문대도집 | 서울 동대문구 전농로11길 17-4",
+   "대도식품 | 서울 중구 을지로 지하 178",
+   "에프터드링크버거 | 서울 성동구 왕십리로 294-2"
+  ]
+ },
+ "nopo-009:kw": {
+  "status": "ok",
+  "lat": 37.54761845738663,
+  "lng": 126.94306051958615,
+  "sido": "서울특별시",
+  "sigungu": "마포구",
+  "address": "서울 마포구 백범로 105",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/14615423",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 육류,고기",
+  "matched": "마포진짜원조최대포 본점",
+  "candidates": [
+   "마포진짜원조최대포 본점 | 서울 마포구 백범로 105",
+   "마포진짜원조최대포 | 서울 강서구 가로공원로76길 107"
+  ]
+ },
+ "nopo-010:kw": {
+  "status": "ok",
+  "lat": 37.58075890736317,
+  "lng": 126.96999438158632,
+  "sido": "서울특별시",
+  "sigungu": "종로구",
+  "address": "서울 종로구 자하문로15길 18",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/11807397",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 분식 > 떡볶이",
+  "matched": "원조할머니떡볶이",
+  "candidates": [
+   "원조할머니떡볶이 | 서울 종로구 자하문로15길 18",
+   "원조정할머니 기름떡볶이 | 서울 종로구 자하문로11길 40",
+   "원조할머니기름떡뽁이 | 서울 종로구 자하문로15길 11",
+   "마복림할머니집 | 서울 중구 다산로35길 5",
+   "종점 | 서울 중구 퇴계로76길 57"
+  ]
+ },
+ "nopo-011:kw": {
+  "status": "ok",
+  "lat": 37.5675038430283,
+  "lng": 126.98031824515,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 다동길 24-12",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/1346301870",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식",
+  "matched": "부민옥",
+  "candidates": [
+   "부민옥 | 서울 중구 다동길 24-12"
+  ]
+ },
+ "nopo-012:kw": {
+  "status": "ok",
+  "lat": 37.491736264525,
+  "lng": 126.90722019996258,
+  "sido": "서울특별시",
+  "sigungu": "영등포구",
+  "address": "서울 영등포구 시흥대로185길 11",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/9125675",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 순대",
+  "matched": "삼거리먼지막순대국",
+  "candidates": [
+   "삼거리먼지막순대국 | 서울 영등포구 시흥대로185길 11"
+  ]
+ },
+ "nopo-013:kw": {
+  "status": "ok",
+  "lat": 37.5907894486919,
+  "lng": 127.017681505368,
+  "sido": "서울특별시",
+  "sigungu": "성북구",
+  "address": "서울 성북구 보문로34길 43",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/1755515956",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 감자탕",
+  "matched": "태조감자국",
+  "candidates": [
+   "태조감자국 | 서울 성북구 보문로34길 43"
+  ]
+ },
+ "nopo-014:kw": {
+  "status": "ok",
+  "lat": 37.56427090773028,
+  "lng": 126.99987775835788,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 마른내로 108",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/20747449",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 냉면",
+  "matched": "오장동함흥냉면",
+  "candidates": [
+   "오장동함흥냉면 | 서울 중구 마른내로 108",
+   "오장동함흥냉면 | 서울 강북구 솔샘로48길 3",
+   "구기동면옥 | 서울 종로구 진흥로 480",
+   "오장동함흥냉면 파미에스테이션점 | 서울 서초구 신반포로 지하 188"
+  ]
+ },
+ "nopo-015:kw": {
+  "status": "ok",
+  "lat": 37.5630118104688,
+  "lng": 126.972908086346,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 서소문로11길 1",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/8178288",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 육류,고기 > 닭요리 > 삼계탕",
+  "matched": "고려삼계탕 시청본점",
+  "candidates": [
+   "고려삼계탕 시청본점 | 서울 중구 서소문로11길 1",
+   "토종한방삼계탕전문 | 서울 중구 마른내로 122",
+   "고려삼계탕 광화문점 | 서울 종로구 세종대로23길 5-1",
+   "강남삼계탕 | 서울 강남구 강남대로110길 12",
+   "고려삼계탕 | 서울 영등포구 은행로 29",
+   "고려녹두삼계탕갈비찜 | 서울 은평구 통일로66길 10-1"
+  ]
+ },
+ "nopo-016:kw": {
+  "status": "ok",
+  "lat": 37.564237853813395,
+  "lng": 126.9760949785008,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 서소문로 139-1",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/10679979",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 국수",
+  "matched": "유림면",
+  "candidates": [
+   "유림면 | 서울 중구 서소문로 139-1"
+  ]
+ },
+ "nopo-017:kw": {
+  "status": "ok",
+  "lat": 37.6622568739229,
+  "lng": 127.006324110577,
+  "sido": "서울특별시",
+  "sigungu": "강북구",
+  "address": "서울 강북구 삼양로173길 116-28",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/8472822",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식",
+  "matched": "초가집",
+  "candidates": [
+   "초가집 | 서울 강북구 삼양로173길 116-28"
+  ]
+ },
+ "nopo-018:kw": {
+  "status": "not_found",
+  "candidates": [
+   "에키보 | 서울 용산구 한강대로15길 19-28"
+  ]
+ },
+ "nopo-019:kw": {
+  "status": "ok",
+  "lat": 37.5453966002957,
+  "lng": 127.08534387836,
+  "sido": "서울특별시",
+  "sigungu": "광진구",
+  "address": "서울 광진구 자양로 199-1",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/7939102",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 냉면",
+  "matched": "서북면옥",
+  "candidates": [
+   "서북면옥 | 서울 광진구 자양로 199-1"
+  ]
+ },
+ "nopo-020:kw": {
+  "status": "not_found",
+  "candidates": [
+   "생고기통술집 | 서울 용산구 청파로85길 38"
+  ]
+ },
+ "nopo-021:kw": {
+  "status": "ok",
+  "lat": 37.5429215843826,
+  "lng": 126.947007522969,
+  "sido": "서울특별시",
+  "sigungu": "마포구",
+  "address": "서울 마포구 토정로37길 47",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/18279130",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 육류,고기 > 불고기,두루치기",
+  "matched": "역전회관",
+  "candidates": [
+   "역전회관 | 서울 마포구 토정로37길 47"
+  ]
+ },
+ "nopo-022:kw": {
+  "status": "ok",
+  "lat": 37.562478781861735,
+  "lng": 126.97453133779806,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 세종대로11길 26",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/11152625",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 국수",
+  "matched": "진주회관",
+  "candidates": [
+   "진주회관 | 서울 중구 세종대로11길 26"
+  ]
+ },
+ "nopo-023:kw": {
+  "status": "not_found",
+  "candidates": []
+ },
+ "nopo-024:kw": {
+  "status": "ok",
+  "lat": 37.5660852137074,
+  "lng": 126.99157870487,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 을지로 124",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/10582837",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 중식 > 중국요리",
+  "matched": "안동장",
+  "candidates": [
+   "안동장 | 서울 중구 을지로 124",
+   "안동장 | 서울 동작구 흑석로 105-1",
+   "신안동장 | 서울 마포구 성미산로 98"
+  ]
+ },
+ "nopo-025:kw": {
+  "status": "ok",
+  "lat": 37.56621445453592,
+  "lng": 126.97994166288005,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 을지로 19",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/10372376",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 양식 > 이탈리안",
+  "matched": "라칸티나",
+  "candidates": [
+   "라칸티나 | 서울 중구 을지로 19"
+  ]
+ },
+ "nopo-026:kw": {
+  "status": "ok",
+  "lat": 37.56773441926809,
+  "lng": 126.9798518336699,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 을지로1길 38",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/11064200",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 해장국",
+  "matched": "무교동북어국집",
+  "candidates": [
+   "무교동북어국집 | 서울 중구 을지로1길 38",
+   "오양회참치 | 서울 중구 세종대로21길 49",
+   "소문난집삼경원 | 서울 종로구 종로 19",
+   "명동한우방 | 서울 중구 명동9길 37-5",
+   "전주청국장 | 서울 종로구 종로5길 58",
+   "명동얼큰수제비 본점 | 서울 중구 남대문로 64",
+   "왕성식당 | 서울 중구 남대문시장길 18-2",
+   "서울뚝배기 | 서울 중구 수표로6길 1",
+   "을지로마포쭈꾸미 | 서울 중구 을지로16길 5-1",
+   "초원식당 | 서울 중구 소공로 지하 58"
+  ]
+ },
+ "nopo-027:kw": {
+  "status": "ok",
+  "lat": 37.5884336982898,
+  "lng": 127.004307013755,
+  "sido": "서울특별시",
+  "sigungu": "성북구",
+  "address": "서울 성북구 창경궁로43길 9",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/8200924",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 국수",
+  "matched": "국시집",
+  "candidates": [
+   "국시집 | 서울 성북구 창경궁로43길 9",
+   "우리밀국시 | 서울 성북구 혜화로 84-2",
+   "혜화칼국수 | 서울 종로구 창경궁로35길 13"
+  ]
+ },
+ "nopo-028:kw": {
+  "status": "ok",
+  "lat": 37.5186034914123,
+  "lng": 126.908578292214,
+  "sido": "서울특별시",
+  "sigungu": "영등포구",
+  "address": "서울 영등포구 영중로10길 30",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/10244660",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 중식 > 중국요리",
+  "matched": "대문점",
+  "candidates": [
+   "대문점 | 서울 영등포구 영중로10길 30"
+  ]
+ },
+ "nopo-029:kw": {
+  "status": "ok",
+  "lat": 37.5363747672842,
+  "lng": 126.960412992937,
+  "sido": "서울특별시",
+  "sigungu": "용산구",
+  "address": "서울 용산구 새창로 124-10",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/10469081",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 해장국",
+  "matched": "창성옥 용문본점",
+  "candidates": [
+   "창성옥 용문본점 | 서울 용산구 새창로 124-10"
+  ]
+ },
+ "nopo-030:kw": {
+  "status": "ok",
+  "lat": 37.574861980061726,
+  "lng": 126.98440066334217,
+  "sido": "서울특별시",
+  "sigungu": "종로구",
+  "address": "서울 종로구 인사동14길 5",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/296195507",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식",
+  "matched": "선천집",
+  "candidates": [
+   "선천집 | 서울 종로구 인사동14길 5",
+   "선천 | 서울 종로구 인사동14길 5"
+  ]
+ },
+ "nopo-031:kw": {
+  "status": "not_found",
+  "candidates": []
+ },
+ "nopo-032:kw": {
+  "status": "ok",
+  "lat": 37.56025345426618,
+  "lng": 126.96771296267711,
+  "sido": "서울특별시",
+  "sigungu": "중구",
+  "address": "서울 중구 청파로 459-1",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/8079539",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 설렁탕",
+  "matched": "중림장",
+  "candidates": [
+   "중림장 | 서울 중구 청파로 459-1"
+  ]
+ },
+ "nopo-033:kw": {
+  "status": "not_found",
+  "candidates": []
+ },
+ "nopo-034:kw": {
+  "status": "ok",
+  "lat": 37.5840261120217,
+  "lng": 127.001322369994,
+  "sido": "서울특별시",
+  "sigungu": "종로구",
+  "address": "서울 종로구 대학로 143",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/7856064",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 치킨 > 림스치킨",
+  "matched": "림스치킨 서울혜화점",
+  "candidates": [
+   "림스치킨 서울혜화점 | 서울 종로구 대학로 143"
+  ]
+ },
+ "nopo-035:kw": {
+  "status": "ok",
+  "lat": 37.5734838798017,
+  "lng": 126.988009787418,
+  "sido": "서울특별시",
+  "sigungu": "종로구",
+  "address": "서울 종로구 삼일대로 436",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/17606599",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 해물,생선 > 아구",
+  "matched": "옛날집낙원아구찜",
+  "candidates": [
+   "옛날집낙원아구찜 | 서울 종로구 삼일대로 436"
+  ]
+ },
+ "nopo-036:kw": {
+  "status": "ok",
+  "lat": 37.5347063464535,
+  "lng": 126.974289610198,
+  "sido": "서울특별시",
+  "sigungu": "용산구",
+  "address": "서울 용산구 한강대로62가길 8-1",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/10693894",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 해물,생선 > 매운탕,해물탕",
+  "matched": "삼각지원대구탕 본점",
+  "candidates": [
+   "삼각지원대구탕 본점 | 서울 용산구 한강대로62가길 8-1"
+  ]
+ },
+ "nopo-037:kw": {
+  "status": "ok",
+  "lat": 37.4551319490809,
+  "lng": 126.898583086671,
+  "sido": "서울특별시",
+  "sigungu": "금천구",
+  "address": "서울 금천구 시흥대로63길 20",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/11833906",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 중식 > 중국요리",
+  "matched": "동흥관",
+  "candidates": [
+   "동흥관 | 서울 금천구 시흥대로63길 20",
+   "동흥관 주차장 | 서울 금천구 시흥동 743-12",
+   "동흥관수타짜장 | 경기 안양시 만안구 삼막로39번길 20"
+  ]
+ },
+ "nopo-038:kw": {
+  "status": "not_found",
+  "candidates": [
+   "쌍다리돼지불백 본점 | 서울 성북구 성북로23길 4",
+   "쌍다리돼지불백 원남점 | 서울 종로구 동순라길 78-9"
+  ]
+ },
+ "nopo-039:kw": {
+  "status": "ok",
+  "lat": 37.5609721909822,
+  "lng": 126.80915761051,
+  "sido": "서울특별시",
+  "sigungu": "강서구",
+  "address": "서울 강서구 공항대로 18-1",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/8228599",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 한식 > 국수 > 칼국수",
+  "matched": "공항칼국수",
+  "candidates": [
+   "공항칼국수 | 서울 강서구 공항대로 18-1",
+   "문배동 육칼 김포국제공항국내선 | 서울 강서구 하늘길 112",
+   "개성손만두 공항점 | 서울 강서구 공항대로7길 8",
+   "정희 롯데백화점김포공항점 | 서울 강서구 방화동 886",
+   "플레이팅 김포공항점 | 서울 강서구 하늘길 112"
+  ]
+ },
+ "nopo-040:kw": {
+  "status": "not_found",
+  "candidates": []
+ },
+ "nopo-041:kw": {
+  "status": "ok",
+  "lat": 37.467081325867,
+  "lng": 126.931362106684,
+  "sido": "서울특별시",
+  "sigungu": "관악구",
+  "address": "서울 관악구 호암로 553",
+  "kakaoPlaceUrl": "http://place.map.kakao.com/17340937",
+  "kakaoCategory": "음식점",
+  "kakaoCategoryDetail": "음식점 > 분식",
+  "matched": "미림분식",
+  "candidates": [
+   "미림분식 | 서울 관악구 호암로 553",
+   "김밥천국 미림점 | 서울 관악구 호암로 534"
   ]
  }
 }
