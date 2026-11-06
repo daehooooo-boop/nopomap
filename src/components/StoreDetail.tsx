@@ -38,7 +38,7 @@ export default function StoreDetail() {
             <dl className="grid grid-cols-2 gap-3">
               <div className="rounded-xl bg-background p-3">
                 <dt className="text-xs text-muted">업력</dt>
-                <dd className="text-2xl font-bold tabular-nums" style={{ color: `var(--tier-${t})` }}>
+                <dd className="text-2xl font-bold tabular-nums" style={{ color: `var(--tier-${t}-ink)` }}>
                   {y ? `${y}년차` : "30년 이상"}
                 </dd>
               </div>
