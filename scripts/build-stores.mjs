@@ -20,6 +20,7 @@ if (!OFFLINE && !KEY) {
 
 const BAEKNYEON_CSV = "data/raw/baeknyeon_2026-08-20.csv";
 const BAEKNYEON_2022_CSV = "data/raw/baeknyeon_2022-07-13.csv"; // 업종(주요사업)·연락처 보완용
+const GYEONGGI_CSV = "data/raw/gyeonggi_baeknyeon_2022-11-24.csv"; // 경기도 백년가게 지정현황: 창업연도 보완용
 const BAEKNYEON_SOURCE = {
   name: "전국 백년가게 지정리스트 (소상공인시장진흥공단, 2026-08-20)",
   url: "https://www.data.go.kr/data/15132695/fileData.do",
@@ -182,6 +183,24 @@ const find22 = (name, address) => {
 };
 let matched22 = 0;
 
+// 경기도 지정현황(2022-11-24): 업력 칸의 "55(1966년)"에서 창업연도를 꺼냄
+// - 1905년은 값이 비어 있던 자리를 채운 것으로 보여 버림
+// - 30년 미만(1997년 이후)은 백년가게 기준과 맞지 않아 버림 (경기도 자체 지정분으로 추정)
+const csvGy = parseCsv(new TextDecoder("euc-kr").decode(await read(GYEONGGI_CSV)));
+const [hGy, ...rowsGy] = csvGy;
+const MAX_OPEN_YEAR = new Date().getFullYear() - 29;
+const yearGy = new Map();
+for (const r of rowsGy) {
+  if (r.length < hGy.length) continue;
+  const y = Number(r[hGy.indexOf("업력(창업년도)")].match(/\((\d{4})/)?.[1]);
+  if (!y || y === 1905 || y > MAX_OPEN_YEAR) continue;
+  const t = r[hGy.indexOf("정제도로명주소")].split(" ");
+  yearGy.set(`${compact(r[hGy.indexOf("업체명")])}|${t[1] ?? ""}`, y);
+}
+const findYearGy = (name, sido, sigungu) =>
+  sido === "경기도" ? (yearGy.get(`${compact(name)}|${(sigungu ?? "").split(" ")[0]}`) ?? null) : null;
+let matchedGy = 0;
+
 const csv = parseCsv(new TextDecoder("euc-kr").decode(await read(BAEKNYEON_CSV)));
 const [header, ...rows] = csv;
 const col = (n) => header.indexOf(n);
@@ -242,10 +261,12 @@ for (const b of baeknyeon) {
   const items = b.extra?.mainBusiness
     ? b.extra.mainBusiness.split(/[,·/]/).map((x) => x.trim()).filter(Boolean)
     : [];
+  const openYear = findYearGy(b.name, g.sido, g.sigungu);
+  if (openYear) matchedGy++;
   stores.push({
     id: b.id,
     name: b.name,
-    openYear: null,
+    openYear, // 경기도 지정현황에서 찾은 창업연도. 없으면 null(=30년 이상으로 취급)
     sido: g.sido,
     sigungu: g.sigungu,
     address: g.address,
@@ -286,4 +307,5 @@ await writeFile(
 const byStatus = report.reduce((m, r) => ((m[r.status] = (m[r.status] ?? 0) + 1), m), {});
 console.log(`완료: 지도에 ${stores.length}곳 (백년가게 ${baeknyeon.length}곳 중 ${stores.filter((s) => s.id.startsWith("bn-")).length}곳 + 기존 ${seed.length}곳)`);
 console.log(`2022 현황과 매칭: ${matched22}/${baeknyeon.length}곳 (주요사업·연락처 보완)`);
+console.log(`경기도 지정현황에서 창업연도 보완: ${matchedGy}곳`);
 console.log(`확인 필요: ${JSON.stringify(byStatus)} → data/geocode-report.json`);
