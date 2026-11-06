@@ -190,8 +190,10 @@ const csvGy = parseCsv(new TextDecoder("euc-kr").decode(await read(GYEONGGI_CSV)
 const [hGy, ...rowsGy] = csvGy;
 const MAX_OPEN_YEAR = new Date().getFullYear() - 29;
 const yearGy = new Map();
+const kindGy = new Map(); // 업체명 → 구분(음식점업·도소매업…), 카카오 업종이 없는 가게 분류용
 for (const r of rowsGy) {
   if (r.length < hGy.length) continue;
+  kindGy.set(compact(r[hGy.indexOf("업체명")]), r[hGy.indexOf("구분")].trim());
   const y = Number(r[hGy.indexOf("업력(창업년도)")].match(/\((\d{4})/)?.[1]);
   if (!y || y === 1905 || y > MAX_OPEN_YEAR) continue;
   const t = r[hGy.indexOf("정제도로명주소")].split(" ");
@@ -211,6 +213,25 @@ const baeknyeon = rows.map((r) => {
   if (extra) matched22++;
   return { id: hashId("bn", `${name}|${address}`), name, address, extra };
 });
+
+// 노포맵은 식음료 매장(음식점·카페·제과)만 보여 줌
+// 1순위 카카오 업종, 없으면 2022 주요사업·경기도 구분·상호명의 낱말로 판단
+const DRINK = /카페|커피|다방|찻집|전통차|제과|과자점|베이커리|빵/;
+const FOOD =
+  /음식|식당|한식|중식|일식|양식|분식|요리|냉면|국밥|국수|면옥|갈비|불고기|구이|곱창|숯불|바베큐|물회|생선회|탕|찜|전골|곰탕|설렁|해장|순대|만두|짜장|짬뽕|치킨|통닭|족발|보쌈|추어|장어|아귀|낙지|횟집|(^|[ ,])회([ ,]|$)|회관|백반|정식|비빔|김밥|떡볶|막걸리|주점|가든|면가|옥$|관$/;
+const NOT_FOOD = /목욕|사우나|숙박|호텔|여관|모텔|미용|이용원|도소매|도매|정육점|젓갈|건어물|방앗간|기름집|식자재|식품가공/;
+const plainName = (n) => n.replace(/주식회사|\(주\)|㈜|\(.*?\)/g, "").trim();
+function foodCategory(kakaoCategory, kakaoDetail, hints) {
+  if (kakaoCategory === "음식점" || kakaoCategory === "카페") return kakaoCategory;
+  if (kakaoDetail?.startsWith("음식점")) return "음식점";
+  if (kakaoCategory) return null; // 카카오가 다른 업종(미용실·서점 등)으로 찾은 가게
+  const words = hints.filter(Boolean);
+  if (words.some((w) => NOT_FOOD.test(w) && !FOOD.test(w) && !DRINK.test(w))) return null;
+  if (words.some((w) => DRINK.test(w))) return "카페";
+  if (words.some((w) => FOOD.test(w))) return "음식점";
+  return null;
+}
+const excluded = [];
 
 let calls = 0;
 async function resolve(id, name, address, opts) {
@@ -257,7 +278,21 @@ for (const b of baeknyeon) {
     if (!dup.designations.includes("백년가게")) dup.designations.push("백년가게");
     continue;
   }
-  const category = g.kakaoCategory ?? "기타";
+  const category = foodCategory(g.kakaoCategory, g.kakaoCategoryDetail, [
+    b.extra?.mainBusiness,
+    g.sido === "경기도" && kindGy.get(compact(b.name)) === "음식점업" ? "음식점" : null,
+    plainName(b.name),
+  ]);
+  if (!category) {
+    excluded.push({
+      id: b.id,
+      name: b.name,
+      address: g.address,
+      kakaoCategory: g.kakaoCategoryDetail ?? null,
+      mainBusiness: b.extra?.mainBusiness ?? null,
+    });
+    continue;
+  }
   const items = b.extra?.mainBusiness
     ? b.extra.mainBusiness.split(/[,·/]/).map((x) => x.trim()).filter(Boolean)
     : [];
@@ -289,6 +324,7 @@ for (const b of baeknyeon) {
 }
 
 await writeFile(new URL("data/geocode-cache.json", ROOT), JSON.stringify(cache, null, 1));
+await writeFile(new URL("data/excluded-nonfood.json", ROOT), JSON.stringify(excluded, null, 1) + "\n");
 await writeFile(new URL("data/geocode-report.json", ROOT), JSON.stringify(report, null, 2) + "\n");
 await writeFile(
   new URL("src/data/stores.json", ROOT),
@@ -307,5 +343,6 @@ await writeFile(
 const byStatus = report.reduce((m, r) => ((m[r.status] = (m[r.status] ?? 0) + 1), m), {});
 console.log(`완료: 지도에 ${stores.length}곳 (백년가게 ${baeknyeon.length}곳 중 ${stores.filter((s) => s.id.startsWith("bn-")).length}곳 + 기존 ${seed.length}곳)`);
 console.log(`2022 현황과 매칭: ${matched22}/${baeknyeon.length}곳 (주요사업·연락처 보완)`);
+console.log(`식음료가 아니어서 뺀 가게: ${excluded.length}곳 → data/excluded-nonfood.json`);
 console.log(`경기도 지정현황에서 창업연도 보완: ${matchedGy}곳`);
 console.log(`확인 필요: ${JSON.stringify(byStatus)} → data/geocode-report.json`);

@@ -60,6 +60,45 @@ export default function KakaoMap({ stores, selectedId, onSelect, fitKey, visible
   const markers = useRef<Map<string, any>>(new Map());
   const onSelectRef = useRef(onSelect);
   const [state, setState] = useState<"loading" | "ready" | "nokey" | "error">(KEY ? "loading" : "nokey");
+  const me = useRef<any>(null);
+  const [locating, setLocating] = useState(false);
+  const [locateMsg, setLocateMsg] = useState<string | null>(null);
+
+  // 내 위치로 이동: 브라우저 위치 권한을 받아 파란 점을 찍고 동네 수준으로 확대
+  const goToMyLocation = () => {
+    if (state !== "ready") return;
+    if (!navigator.geolocation) return setLocateMsg("이 브라우저는 위치 찾기를 지원하지 않아요.");
+    setLocating(true);
+    setLocateMsg(null);
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        const kakao = window.kakao;
+        const pos = new kakao.maps.LatLng(coords.latitude, coords.longitude);
+        const content =
+          '<div style="width:18px;height:18px;border-radius:50%;background:#2f80ed;border:3px solid #fff;box-shadow:0 0 0 6px rgba(47,128,237,.25)"></div>';
+        if (me.current) me.current.setPosition(pos);
+        else me.current = new kakao.maps.CustomOverlay({ map: map.current, position: pos, content, zIndex: 20 });
+        map.current.setLevel(5);
+        map.current.panTo(pos);
+        setLocating(false);
+      },
+      (err) => {
+        setLocating(false);
+        setLocateMsg(
+          err.code === err.PERMISSION_DENIED
+            ? "위치 권한이 꺼져 있어요. 브라우저 설정에서 이 사이트의 위치 접근을 허용해 주세요."
+            : "현재 위치를 찾지 못했어요. 잠시 후 다시 시도해 주세요.",
+        );
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 },
+    );
+  };
+
+  useEffect(() => {
+    if (!locateMsg) return;
+    const t = setTimeout(() => setLocateMsg(null), 4000);
+    return () => clearTimeout(t);
+  }, [locateMsg]);
 
   useEffect(() => {
     onSelectRef.current = onSelect;
@@ -150,6 +189,35 @@ export default function KakaoMap({ stores, selectedId, onSelect, fitKey, visible
   return (
     <div className="relative h-full w-full bg-line/40">
       <div ref={el} className="h-full w-full" />
+      {state === "ready" && (
+        <button
+          type="button"
+          onClick={goToMyLocation}
+          aria-label="내 위치로 이동"
+          title="내 위치로 이동"
+          className="absolute right-3 bottom-[calc(80px+env(safe-area-inset-bottom))] z-10 grid h-11 w-11 place-items-center rounded-full border border-line bg-surface text-foreground shadow-md md:bottom-6"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            className={locating ? "animate-pulse" : undefined}
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+            <circle cx="12" cy="12" r="8" />
+          </svg>
+        </button>
+      )}
+      {locateMsg && (
+        <p className="absolute top-3 left-1/2 z-10 w-[min(90%,360px)] -translate-x-1/2 rounded-lg bg-foreground px-3 py-2 text-center text-xs text-background shadow-md">
+          {locateMsg}
+        </p>
+      )}
       {state !== "ready" && (
         <div className="absolute inset-0 grid place-items-center p-6 text-center text-sm text-muted">
           {state === "loading" && "지도를 불러오는 중…"}
