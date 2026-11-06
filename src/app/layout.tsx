@@ -4,6 +4,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "노포맵 · 전국 노포 지도",
   description: "30년, 50년, 70년, 100년을 지켜 온 전국의 노포를 지도와 목록으로 찾아보세요.",
+  applicationName: "노포맵",
+  appleWebApp: { capable: true, title: "노포맵", statusBarStyle: "default" },
 };
 
 export const viewport: Viewport = {
