@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "30년, 50년, 70년, 100년을 지켜 온 전국의 노포를 지도와 목록으로 찾아보세요.",
     start_url: "/",
     display: "standalone",
-    background_color: "#FF0202",
+    background_color: "#E61E4D",
     theme_color: "#faf7f2",
     lang: "ko",
     icons: [
