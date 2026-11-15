@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import FilterBar from "@/components/FilterBar";
 import StoreList from "@/components/StoreList";
 import StoreDetail from "@/components/StoreDetail";
+import CreatorFooter from "@/components/CreatorFooter";
 import { useFilteredStores, useNopoStore } from "@/store/useNopoStore";
 import { cn } from "@/lib/utils";
 
@@ -20,9 +21,7 @@ export default function NopoApp() {
         <FilterBar count={stores.length} />
         <div className={cn("min-h-0 flex-1 overflow-y-auto bg-surface pb-24 md:block md:pb-6", view === "list" ? "block" : "hidden")}>
           <StoreList stores={stores} />
-          <footer className="px-4 pt-6 text-[11px] leading-relaxed text-muted">
-            데이터: 서울미래유산, 서울시 오래가게 (내 손안에 서울). 업력은 올해 기준으로 계산해요.
-          </footer>
+          <CreatorFooter />
         </div>
       </aside>
 
